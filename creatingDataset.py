@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 path = 'D:/Code/Windows Code/ML/Hand Gesture/ASL/DB'
-cam=0#int(input("Enter Camera Index : "))
+int(input("Enter Camera Index : "))
 cap=cv2.VideoCapture(cam)
 i=6
 j=1

@@ -24,10 +24,8 @@ def getGestureImg(cnt,img,th1,model):
     img_gray_inv = 255 - img_gray
     img_blur = cv2.GaussianBlur(img_gray_inv, ksize=(21, 21),sigmaX=0, sigmaY=0)
     imgT = dodgeV2(img_gray, img_blur)
-    #imgT=img[y:y+h,x:x+w]
     imgT=cv2.bitwise_and(imgT,imgT,mask=th1[y:y+h,x:x+w])
     imgT=cv2.resize(imgT,(200,200))
-    #imgTG=cv2.cvtColor(imgT,cv2.COLOR_BGR2GRAY)
     resp=st.predict(model,imgT)
     img=cv2.imread('TrainData/'+chr(int(resp[0])+64)+'_2.jpg')
-    return imgT,chr(int(resp[0])+64)
+    return img,chr(int(resp[0])+64)
