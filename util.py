@@ -27,5 +27,5 @@ def getGestureImg(cnt,img,th1,model):
     imgT=cv2.bitwise_and(imgT,imgT,mask=th1[y:y+h,x:x+w])
     imgT=cv2.resize(imgT,(200,200))
     resp=st.predict(model,imgT)
-    img=cv2.imread('TrainData/'+chr(int(resp[0])+64)+'_2.jpg')
+    img=cv2.imread('DB/'+chr(int(resp[0])+64)+'_2.jpg')
     return img,chr(int(resp[0])+64)
