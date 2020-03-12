@@ -15,3 +15,5 @@ In this project we make our machine learn all the 26 Alphabets by using SVM. The
 3. Take it ask to ***Enter Camera number: ***
    * ***0*** for internal camera.
    * ***1*** for external webcam.
+
+### Youtube Link :- https://youtu.be/JG3QB13A24Q
