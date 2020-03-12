@@ -4,9 +4,9 @@ import util as ut
 import svm_train as st 
 import re
 model=st.trainSVM(26)
-#create and train SVM model each time coz bug in opencv 3.1.0 svm.load() https://github.com/Itseez/opencv/issues/4969
+
 cam=int(input("Enter Camera number: "))
-cap=cv2.VideoCapture(0)
+cap=cv2.VideoCapture(cam)
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 def nothing(x) :
@@ -53,7 +53,6 @@ while(cap.isOpened()):
 					print(text)
 			cv2.imshow('PredictedGesture',gesture)				  # showing the best match or prediction
 			cv2.putText(img,label,(50,150), font,5,(0,125,155),2)  # displaying the predicted letter on the main screen
-			cv2.putText(img,text,(0,450), font,2,(0,0,255),2)
 	except:
 		if cnt.any()!=None:
 			gesture,label=ut.getGestureImg(cnt,img1,mask,model)   # passing the trained model for prediction and fetching the result
@@ -77,7 +76,7 @@ while(cap.isOpened()):
 					print(text)
 			cv2.imshow('PredictedGesture',gesture)				  # showing the best match or prediction
 			cv2.putText(img,label,(50,150), font,5,(0,125,155),2)  # displaying the predicted letter on the main screen
-			cv2.putText(img,text,(0,450), font,2,(0,0,255),2)
+	cv2.putText(img,text,(0,450), font,2,(0,0,255),2)
 	cv2.imshow('Frame',img)
 	cv2.imshow('Mask',mask)
 	k = 0xFF & cv2.waitKey(10)

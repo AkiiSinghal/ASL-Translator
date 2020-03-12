@@ -1,8 +1,6 @@
 import cv2
 import numpy as np
-import os
 
-path = 'D:/Code/Windows Code/ML/Hand Gesture/ASL/DB'
 int(input("Enter Camera Index : "))
 cap=cv2.VideoCapture(cam)
 i=6
@@ -84,7 +82,7 @@ while(cap.isOpened()):
 		break
 	if k == 13:
 		name=str(chr(i+64))+"_"+str(j)+".jpg"
-		cv2.imwrite(os.path.join(path , name),imgT)
+		cv2.imwrite(name,imgT)
 		if(j<400):
 			j+=1
 		else:
