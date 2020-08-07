@@ -10,7 +10,7 @@ In this project we make our machine learn all the 26 Alphabets by using SVM. The
    * ***pip install opencv-python***
 
 ## Implementation
-1. Run using ***python Drowsiness_detection.py*** command.
+1. Run using ***python ASL.py*** command.
 2. First the machine get trained, which can take some time.
 3. Take it ask to ***Enter Camera number: ***
    * ***0*** for internal camera.
